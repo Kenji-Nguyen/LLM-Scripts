@@ -1,0 +1,278 @@
+# Manukai Design Issues Guide
+
+> Reference document for creating Product Design issues in the `CAM-Copilot/frontend-application` repository.
+
+---
+
+## Overview
+
+This guide defines the structure and labeling system for Product Design related issues in Manukai. Use this as a reference when creating issues via GitHub or with an LLM assistant.
+
+---
+
+## Issue Types
+
+Design issues cover the following categories:
+
+| Type               | Description                                         |
+| ------------------ | --------------------------------------------------- |
+| **Research**       | User interviews, user tests, discovery sessions     |
+| **Feature Design** | Designing new features, concepts, explorations      |
+| **Improvement**    | Enhancing existing features                         |
+| **Clarification**  | Edge cases, specs, "what happens when..." questions |
+| **Design System**  | Components, tokens, patterns, documentation         |
+| **Visual**         | Polish, icons, illustrations, motion, styling       |
+
+---
+
+## Labels
+
+### Type Labels (pick one)
+
+| Label            | Use for                               |
+| ---------------- | ------------------------------------- |
+| `design`         | Base label – add to ALL design issues |
+| `research`       | Interviews, user tests, discovery     |
+| `feature-design` | New feature designs                   |
+| `improvement`    | Enhancing existing features           |
+| `clarification`  | Edge cases, specs, detail decisions   |
+| `design-system`  | Components, tokens, patterns          |
+| `visual`         | Polish, icons, illustrations          |
+
+### Priority Labels (pick one)
+
+| Label       | Meaning                                  |
+| ----------- | ---------------------------------------- |
+| `Prio 1` 🔴 | Critical – blocking or urgent for client |
+| `Prio 2` 🟡 | Important – should be addressed soon     |
+| `Prio 3` 🟢 | Nice to have – backlog                   |
+
+---
+
+## Issue Template
+
+```markdown
+## Source
+
+- 💡 Product discovery
+- 🏢 Client feedback / Research
+- 🔧 Engineering team
+
+**Client:** [if applicable, free text e.g. "Bosch", "PSI", "Straumann"]
+**Reported by:** [name of person who reported/requested]
+
+---
+
+## Description
+
+[Short description of the issue, idea, or request]
+
+---
+
+## Affected Area
+
+[e.g., Feature Assignment, Similar Search, Operation Management, Batch Processing, Project Management, 3D Viewer, PDF Viewer, Filtering, Quality of Life, Performance, Design System]
+
+---
+
+## Screenshot / Image (optional)
+
+[Drag & drop image into GitHub, or add image URL]
+```
+
+---
+
+## Source Definitions
+
+| Source                        | When to use                                                                                                                                   |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **💡 Product discovery**      | Internal ideation from design or product team                                                                                                 |
+| **🔬 UX Research / Feedback** | Insight from user interviews, usability tests, or observation ,Request, bug report, or idea came from a customer. Always include client name. |
+| **🔧 Engineering team**       | Feedback or question from developers during implementation                                                                                    |
+
+---
+
+## Affected Areas (Examples)
+
+Common areas in Manukai to reference:
+
+| Area                     | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| **Feature Assignment**   | Assigning dimensions, tolerances, properties to features  |
+| **Similar Search**       | Finding similar features/programs, comparison views       |
+| **Operation Management** | Operations workflow, adding/editing/reordering operations |
+| **Batch Processing**     | Multi-feature handling, bulk tool replacement             |
+| **Project Management**   | Project overview, loading parts, history, states          |
+| **3D Viewer**            | Gizmo, model visualization, face selection                |
+| **PDF Viewer**           | Drawing viewer, OCR rectangles, annotations               |
+| **Filtering**            | Search criteria, parameter filters, filter UI             |
+| **Quality of Life**      | Tooltips, keyboard shortcuts, small UX improvements       |
+| **Performance**          | Loading states, animations, speed optimizations           |
+| **Design System**        | Components, tokens, patterns, icons                       |
+| **Navigation**           | Sidebar, routing, screen transitions                      |
+| **Settings**             | Account, preferences, configuration                       |
+
+---
+
+## Example Issues
+
+### Example 1: Client feedback for improvement
+
+**Title:** Improve tolerance input – allow typing custom values
+
+**Labels:** `design`, `improvement`, `Prio 2`
+
+```markdown
+## Source
+
+🔬User research / Feedback
+
+**Client:** PSI
+**Reported by:** Mathias Heusser
+
+---
+
+## Description
+
+User wants to type custom tolerance values like "-21.3 / +2.9" instead of using predefined options. Current input doesn't allow free text entry.
+
+---
+
+## Affected Area
+
+Feature assignment
+```
+
+---
+
+### Example 2: User research insight
+
+**Title:** Understand how programmers handle multi-setup parts
+
+**Labels:** `design`, `research`, `Prio 2`
+
+```markdown
+## Source
+
+🔬User research / Feedback
+
+**Client:** —
+**Reported by:** Maji
+
+---
+
+## Description
+
+We need to understand how CNC programmers currently handle parts that require multiple setups. This will inform the design of our multi-setup workflow.
+
+**Research goals:**
+
+- How do they decide setup order?
+- What information do they need per setup?
+- Pain points with current CAM tools?
+
+---
+
+## Affected Area
+
+Operation Management
+```
+
+---
+
+### Example 3: Feature design from product discovery
+
+**Title:** Design batch tool replacement flow
+
+**Labels:** `design`, `feature-design`, `Prio 1`
+
+```markdown
+## Source
+
+💡 Product discovery
+
+**Client:** —
+**Reported by:** Maji
+
+---
+
+## Description
+
+Design a flow that allows users to replace a tool across multiple projects at once. Should include:
+
+- Project selection
+- Preview of affected operations
+- Confirmation step
+- Success/error feedback
+
+---
+
+## Affected Area
+
+Batch Processing
+
+---
+
+## Figma
+
+[link to exploration file]
+```
+
+---
+
+### Example 4: Issue with screenshot
+
+**Title:** Box positioning incorrect in PDF viewer
+
+**Labels:** `design`, `improvement`, `Prio 2`
+
+```markdown
+## Source
+
+🔬User research / Feedback
+
+**Client:** Bosch
+**Reported by:** Daniel
+
+---
+
+## Description
+
+The OCR bounding boxes are not aligned correctly with the actual dimensions in the PDF. See screenshot below.
+
+---
+
+## Affected Area
+
+PDF Viewer
+
+---
+
+## Screenshot
+
+![Box positioning issue](https://github.com/user-attachments/assets/example-image.png)
+```
+
+---
+
+## Quick Reference
+
+**Creating an issue checklist:**
+
+1. ☐ Write clear, concise title
+2. ☐ Add `design` label + type label (e.g., `feature-design`)
+3. ☐ Add priority label (`Prio 1`, `Prio 2`, or `Prio 3`)
+4. ☐ Select source (Client / Engineering / Research / Product discovery)
+5. ☐ Add client name if applicable
+6. ☐ Write short description
+7. ☐ Specify affected area
+8. ☐ Add Figma section only if there's a link (omit entirely if none)
+9. ☐ Add screenshot if helpful (drag & drop into GitHub)
+
+---
+
+## Repository Info
+
+- **Organization:** CAM-Copilot
+- **Repository:** frontend-application
+- **Project Board:** https://github.com/orgs/CAM-Copilot/projects/2

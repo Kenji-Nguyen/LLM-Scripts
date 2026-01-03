@@ -1,0 +1,184 @@
+# Manukai Frontend Design Review Guide
+
+> Reference document for creating frontend implementation issues in the `CAM-Copilot/frontend-application` repository.
+
+---
+
+## Overview
+
+Use this guide when reviewing the implemented frontend against the design. The user will describe issues conversationally – your job is to turn that into a clear GitHub issue.
+
+**Label:** `frontend-review` (always use this, nothing else)
+
+---
+
+## What You'll Hear About
+
+Common issues the designer reports:
+
+- **Spacing/alignment** – elements are off, not aligned, wrong margins
+- **Colors** – wrong color, wrong opacity, doesn't match design
+- **States missing** – hover, active, disabled, focus states not implemented
+- **Animations** – missing or wrong transitions/motion
+- **Added elements** – developer added something that's not in the design
+- **Missing elements** – something from the design wasn't built
+- **Doesn't look right** – general "this feels off" feedback
+- **Behavior wrong** – interaction doesn't work as designed
+
+---
+
+## Issue Template
+
+```markdown
+## What's Wrong
+
+[Description of the issue]
+
+---
+
+## Location
+
+[Screen and element where the issue is]
+
+---
+
+## Figma (optional)
+
+[Link if provided]
+
+---
+
+## Screenshot (optional)
+
+[Image if provided]
+```
+
+Keep it simple. Only include sections that have content.
+
+---
+
+## Examples
+
+### Example 1: Simple spacing issue
+
+> "The buttons in the header are too close together"
+
+**Title:** Header buttons spacing too tight
+
+```markdown
+## What's Wrong
+
+The action buttons in the header are too close together.
+
+---
+
+## Location
+
+Header, action buttons
+```
+
+---
+
+### Example 2: Missing state
+
+> "The dropdown doesn't have a hover state"
+
+**Title:** Dropdown missing hover state
+
+```markdown
+## What's Wrong
+
+The dropdown component doesn't show a hover state when hovering over options.
+
+---
+
+## Location
+
+Dropdown component
+```
+
+---
+
+### Example 3: Color issue
+
+> "The blue on the sidebar active item is wrong, it's too dark"
+
+**Title:** Sidebar active state uses wrong blue
+
+```markdown
+## What's Wrong
+
+The active navigation item in the sidebar uses the wrong blue – it's too dark compared to the design.
+
+---
+
+## Location
+
+Sidebar, active navigation item
+```
+
+---
+
+### Example 4: Something added that shouldn't be there
+
+> "There's a divider line between the cards that I didn't design"
+
+**Title:** Remove divider line between cards
+
+```markdown
+## What's Wrong
+
+There's a divider line between the project cards that wasn't part of the design.
+
+---
+
+## Location
+
+Project overview, between project cards
+```
+
+---
+
+### Example 5: Detailed issue with Figma
+
+> "The tooltip on the save button appears on the wrong side, it should come from the bottom not the right. Here's the Figma: [link]"
+
+**Title:** Save button tooltip appears on wrong side
+
+```markdown
+## What's Wrong
+
+The tooltip on the save button appears on the right side, but it should appear from the bottom.
+
+---
+
+## Location
+
+Feature panel header, save button tooltip
+
+---
+
+## Figma
+
+https://www.figma.com/file/xxxxx
+```
+
+---
+
+## Instructions for the LLM
+
+1. Listen to the user's description
+2. Create a clear, concise title
+3. Write a short "What's Wrong" section in plain language
+4. Add the location if mentioned
+5. Include Figma link only if provided
+6. Leave Screenshot section for user to add later (or include if provided)
+7. Always use label: `frontend-review`
+8. Keep it short – don't over-explain
+
+---
+
+## Repository Info
+
+- **Organization:** CAM-Copilot
+- **Repository:** frontend-application
