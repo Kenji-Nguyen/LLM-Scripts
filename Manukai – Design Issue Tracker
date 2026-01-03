@@ -39,7 +39,7 @@ Design issues cover the following categories:
 | `design-system`  | Components, tokens, patterns          |
 | `visual`         | Polish, icons, illustrations          |
 
-### Priority Labels (pick one)
+### Priority Labels (optional)
 
 | Label       | Meaning                                  |
 | ----------- | ---------------------------------------- |
@@ -261,7 +261,7 @@ PDF Viewer
 
 1. ☐ Write clear, concise title
 2. ☐ Add `design` label + type label (e.g., `feature-design`)
-3. ☐ Add priority label (`Prio 1`, `Prio 2`, or `Prio 3`)
+3. ☐ Add priority label if known (`Prio 1`, `Prio 2`, or `Prio 3`) – optional
 4. ☐ Select source (Client / Engineering / Research / Product discovery)
 5. ☐ Add client name if applicable
 6. ☐ Write short description
