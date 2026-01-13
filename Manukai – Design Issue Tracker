@@ -255,6 +255,79 @@ PDF Viewer
 
 ---
 
+### Example 5: Feature design for group management
+
+**Title:** Group Management for Features – Create and dissolve feature groups
+
+**Labels:** `design`, `feature-design`
+
+```markdown
+## Source
+
+💡 Product discovery
+
+**Client:** —
+**Reported by:** Maji
+
+---
+
+## Description
+
+Enable users to manage groups of geometry features (e.g., drillings, pockets). Users should be able to:
+
+- Create new feature groups manually
+- Dissolve/disband existing groups to reassign features elsewhere
+
+**Example use case:** A part has 36 drillings grouped together. The user wants to dissolve this group and reassign those drillings to a statistics features group instead.
+
+---
+
+## Affected Area
+
+Feature Assignment
+```
+
+---
+
+### Example 6: Research for operation timeline visualization
+
+**Title:** Research operation timeline visualization – Align with CAM software conventions
+
+**Labels:** `design`, `research`
+
+```markdown
+## Source
+
+💡 Product discovery
+
+**Client:** —
+**Reported by:** Maji
+
+---
+
+## Description
+
+Currently, Manukai displays programs (consisting of multiple operations) in a linear timeline showing:
+- Operation type (e.g., roughing, finishing)
+- Tool used
+
+However, CAM software often groups multiple operations under a single tool, presenting them differently. We need to research:
+
+- How do existing CAM tools visualize operation timelines?
+- What are the different approaches (tool-first vs. operation-first)?
+- Which visualization patterns best support programmer workflows?
+
+**Goal:** Identify visualization options that feel familiar to CAM programmers and improve scannability of complex programs.
+
+---
+
+## Affected Area
+
+Operation Management
+```
+
+---
+
 ## Quick Reference
 
 **Creating an issue checklist:**
