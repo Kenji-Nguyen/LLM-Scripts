@@ -1,0 +1,564 @@
+# Onooji Design & Engineering Tracker
+
+> Reference document for creating Design & Engineering tasks (features, improvements, bugs, research) in the `Maji-Studio/onooji-app` repository.
+
+---
+
+## Overview
+
+This guide defines the structure and labeling system for tracking all design and engineering work in Onooji. Use this as a reference when creating GitHub issues or tasks with an LLM assistant.
+
+**This tracker covers:**
+- ✨ New features (design concepts, full-stack implementation)
+- 🐛 Bugs and issues
+- 🔧 Technical improvements and refactoring
+- 📊 User research and discovery
+- 🎨 Visual design and polish
+
+---
+
+## Task Types
+
+Design and engineering tasks cover the following categories:
+
+| Type               | Description                                                   |
+| ------------------ | ------------------------------------------------------------- |
+| **Research**       | User interviews, user tests, discovery sessions               |
+| **Feature Design** | Designing new features, concepts, explorations                |
+| **Feature Dev**    | Backend/full-stack feature implementation                     |
+| **Frontend**       | Frontend implementation, UI components                        |
+| **Backend**        | Backend-only tasks (API, database, server actions)            |
+| **Bug**            | Something isn't working as expected                           |
+| **Improvement**    | Enhancing existing features (design or engineering)           |
+| **Clarification**  | Edge cases, specs, "what happens when..." questions           |
+| **Design System**  | Components, tokens, patterns, documentation                   |
+| **Visual**         | Polish, icons, illustrations, motion, styling                 |
+| **Performance**    | Optimization, speed improvements                              |
+| **Security**       | Security vulnerabilities, auth issues                         |
+| **Database**       | Schema changes, migrations, Drizzle ORM                       |
+| **Integration**    | External API integration (Flowise, Onooji API, Resend)        |
+
+---
+
+## Labels
+
+### Type Labels (pick one or more)
+
+**Design Labels:**
+| Label            | Use for                               |
+| ---------------- | ------------------------------------- |
+| `design`         | Base label – add to ALL design issues |
+| `research`       | Interviews, user tests, discovery     |
+| `feature-design` | New feature designs                   |
+| `design-system`  | Components, tokens, patterns          |
+| `visual`         | Polish, icons, illustrations          |
+
+**Engineering Labels:**
+| Label            | Use for                                         |
+| ---------------- | ----------------------------------------------- |
+| `frontend`       | Frontend implementation, UI components          |
+| `backend`        | Backend-only tasks (API, server actions)        |
+| `feature-dev`    | Full-stack feature development                  |
+| `bug`            | Something broken or not working                 |
+| `database`       | Schema changes, migrations, Drizzle             |
+| `integration`    | External APIs (Flowise, Onooji API, Resend)     |
+| `security`       | Security issues, auth guards                    |
+| `performance`    | Optimization, speed improvements                |
+
+**Shared Labels:**
+| Label            | Use for                                         |
+| ---------------- | ----------------------------------------------- |
+| `improvement`    | Enhancing existing features (design or code)    |
+| `clarification`  | Edge cases, specs, detail decisions             |
+
+### Priority Labels (optional)
+
+| Label       | Meaning                                  |
+| ----------- | ---------------------------------------- |
+| `Prio 1` 🔴 | Critical – blocking or urgent for launch |
+| `Prio 2` 🟡 | Important – should be addressed soon     |
+| `Prio 3` 🟢 | Nice to have – backlog                   |
+
+---
+
+## Task Template
+
+Use this template for all tasks (features, bugs, improvements, research):
+
+```markdown
+## Source
+
+- 💡 Product discovery
+- 🔬 User research / Feedback
+- 🔧 Engineering team
+- 🏥 Clinical / Therapeutic feedback
+
+**Stakeholder:** [if applicable, e.g., "University Hospital Zurich", "Therapist feedback"]
+**Reported by:** [name of person who reported/requested]
+
+---
+
+## Description
+
+[Short description of the feature, issue, improvement, or research question]
+
+---
+
+## Affected Area
+
+[e.g., Chat Interface, Mood Tracking, Dossier, Authentication, Profile & Settings, Email Notifications, Flowise Integration, Database, Server Actions, Therapeutic Safety]
+
+---
+
+## Screenshot / Image / Figma (optional)
+
+[Drag & drop image into GitHub, add image URL, or Figma link]
+```
+
+---
+
+## Source Definitions
+
+| Source                           | When to use                                                                           |
+| -------------------------------- | ------------------------------------------------------------------------------------- |
+| **💡 Product discovery**         | Internal ideation from design or product team                                         |
+| **🔬 User research / Feedback**  | Insight from user interviews, usability tests, or observation from end users          |
+| **🔧 Engineering team**          | Feedback or question from developers during implementation                            |
+| **🏥 Clinical / Therapeutic feedback** | Input from mental health professionals, clinical advisors, or therapeutic experts |
+
+---
+
+## Affected Areas (Examples)
+
+Common areas in Onooji to reference:
+
+| Area                        | Description                                                        |
+| --------------------------- | ------------------------------------------------------------------ |
+| **Chat Interface**          | Conversational UI, message display, input field, chat history      |
+| **Mood Tracking**           | Mood slider, check-in overlay, mood visualization, localStorage    |
+| **Dossier**                 | Mood visualization, insights, charts, historical data              |
+| **Exercises**               | Breathing exercises, wellness activities                           |
+| **Authentication**          | Sign up, login, email verification, password reset, Better Auth    |
+| **Admin System**            | User management, invitations, admin panel                          |
+| **Profile & Settings**      | User profile, password management, notification preferences        |
+| **Email Notifications**     | Daily reminders, Resend integration, email templates               |
+| **Flowise Integration**     | AI chat backend, session management, conversation context          |
+| **Onooji API**              | External API integration, user baseline, registration sync         |
+| **Database**                | Schema, migrations, Drizzle ORM, PostgreSQL                        |
+| **Server Actions**          | fn/ layer, validation, ActionResult pattern                        |
+| **Data Access Layer**       | Auth guards, localStorage operations, requireUserMatch             |
+| **Therapeutic Safety**      | Crisis handling, escalation flows, resource links, tone guidelines |
+| **Accessibility**           | WCAG compliance, screen readers, keyboard navigation               |
+| **Navigation**              | BottomNav, TopNav, routing, proxy.ts middleware                    |
+| **Swiss German Support**    | Dialect handling, language switching, localization                 |
+| **Design System**           | shadcn/ui components, Tailwind, color system                       |
+
+---
+
+## Example Tasks
+
+These examples show different types of work you might track:
+
+### Example 1: User research insight
+
+**Title:** Understand how users prefer to track mood – numeric scale vs. emoji
+
+**Labels:** `design`, `research`, `Prio 2`
+
+```markdown
+## Source
+
+🔬 User research / Feedback
+
+**Stakeholder:** —
+**Reported by:** Maji
+
+---
+
+## Description
+
+We need to understand user preferences for mood tracking input methods. Do users prefer:
+- Numeric scale (1-10)
+- Emoji selection (😢 😐 😊)
+- Text-based descriptions
+- Combination approach
+
+**Research goals:**
+- What feels most natural for daily check-ins?
+- Does preference vary by age group or tech comfort?
+- How detailed should mood tracking be?
+
+---
+
+## Affected Area
+
+Mood Check-in
+```
+
+---
+
+### Example 2: Client/stakeholder feedback for improvement
+
+**Title:** Add ability to edit previous chat messages
+
+**Labels:** `design`, `improvement`, `Prio 2`
+
+```markdown
+## Source
+
+🔬 User research / Feedback
+
+**Stakeholder:** University Hospital Zurich
+**Reported by:** Dr. Sarah Mueller
+
+---
+
+## Description
+
+Users sometimes want to rephrase or correct what they've said in chat. Currently, once a message is sent, it cannot be edited. This can cause frustration when users realize they've expressed something incorrectly.
+
+---
+
+## Affected Area
+
+Chat Interface
+```
+
+---
+
+### Example 3: Feature design from product discovery
+
+**Title:** Design crisis escalation flow
+
+**Labels:** `design`, `feature-design`, `Prio 1`
+
+```markdown
+## Source
+
+💡 Product discovery
+
+**Stakeholder:** —
+**Reported by:** Maji
+
+---
+
+## Description
+
+Design a flow for when the AI detects crisis language or self-harm indicators. Should include:
+
+- Detection trigger points
+- Immediate response template
+- Resource links (helplines, emergency contacts)
+- Option to escalate to human support
+- Follow-up check-in flow
+
+---
+
+## Affected Area
+
+Therapeutic Safety
+
+---
+
+## Figma
+
+[link to exploration file]
+```
+
+---
+
+### Example 4: Clinical/therapeutic feedback
+
+**Title:** AI responses feel too formal – need warmer, more empathetic tone
+
+**Labels:** `design`, `improvement`, `Prio 1`
+
+```markdown
+## Source
+
+🏥 Clinical / Therapeutic feedback
+
+**Stakeholder:** Dr. Anna Zimmermann (Clinical Advisor)
+**Reported by:** Dr. Anna Zimmermann
+
+---
+
+## Description
+
+Current AI responses are accurate but feel clinical and distant. For a mental health companion, the tone needs to be:
+- Warmer and more empathetic
+- Use Swiss German colloquialisms appropriately
+- Balance professionalism with approachability
+- Avoid overly formal therapeutic language
+
+---
+
+## Affected Area
+
+Flowise Integration, Content Management
+```
+
+---
+
+### Example 5: Issue with screenshot
+
+**Title:** Daily notification timing inconsistent
+
+**Labels:** `design`, `improvement`, `Prio 2`
+
+```markdown
+## Source
+
+🔬 User research / Feedback
+
+**Stakeholder:** Beta testers
+**Reported by:** Kenji
+
+---
+
+## Description
+
+Users report that daily check-in notifications arrive at different times each day. Users expect consistency (e.g., always at 9:00 AM) for habit building.
+
+---
+
+## Affected Area
+
+Notifications
+
+---
+
+## Screenshot
+
+![Notification timing issue](https://github.com/user-attachments/assets/example-image.png)
+```
+
+---
+
+### Example 6: Accessibility clarification
+
+**Title:** Clarify screen reader support for chat messages
+
+**Labels:** `design`, `clarification`, `Prio 2`
+
+```markdown
+## Source
+
+🔧 Engineering team
+
+**Stakeholder:** —
+**Reported by:** Dev team
+
+---
+
+## Description
+
+Need clarification on how chat messages should be announced to screen readers:
+- Should each message be announced immediately?
+- Should there be a live region for new messages?
+- How should user vs. AI messages be differentiated?
+- What about typing indicators?
+
+---
+
+## Affected Area
+
+Chat Interface, Accessibility
+```
+
+---
+
+### Example 7: Backend feature development
+
+**Title:** Implement mood statistics calculation in use-cases layer
+
+**Labels:** `backend`, `feature-dev`, `Prio 2`
+
+```markdown
+## Source
+
+🔧 Engineering team
+
+**Stakeholder:** —
+**Reported by:** Dev team
+
+---
+
+## Description
+
+Create a pure function in `src/use-cases/mood.ts` to calculate mood statistics (streak, trend, averages) from mood entries.
+
+**Requirements:**
+- Calculate current streak (consecutive days with entries)
+- Calculate 7-day average mood value
+- Determine trend direction (improving/declining/stable)
+- Pure function (no side effects, easily testable)
+- Follow WebDevCody layered architecture pattern
+
+**Technical notes:**
+- Should receive array of MoodEntry from data-access layer
+- Return MoodStats type with all calculated values
+- Use date-fns utilities from @/lib/date-utils for date operations
+
+---
+
+## Affected Area
+
+Server Actions, Data Access Layer
+```
+
+---
+
+### Example 8: Database migration issue
+
+**Title:** Add user_settings table for notification preferences
+
+**Labels:** `database`, `backend`, `Prio 1`
+
+```markdown
+## Source
+
+🔧 Engineering team
+
+**Stakeholder:** —
+**Reported by:** Backend team
+
+---
+
+## Description
+
+Create a new database table to store user notification preferences.
+
+**Schema requirements:**
+- Table name: `app_user_settings` (with app_ prefix)
+- Columns: userId (FK), emailNotifications (boolean), notificationTime (int 0-23), timezone (string)
+- Use Drizzle schema definition in `src/db/schema/`
+- Generate migration with `pnpm db:generate`
+
+**CRITICAL:**
+- ⚠️ Review generated SQL before applying
+- Database is shared with Flowise - DO NOT drop/reset
+- Follow existing table naming patterns with `app_` prefix
+
+---
+
+## Affected Area
+
+Database, Schema
+```
+
+---
+
+### Example 9: Flowise integration bug
+
+**Title:** Chat context not including mood history correctly
+
+**Labels:** `bug`, `integration`, `Prio 1`
+
+```markdown
+## Source
+
+🔧 Engineering team
+
+**Stakeholder:** —
+**Reported by:** QA Testing
+
+---
+
+## Description
+
+When sending messages to Flowise API, the mood history from localStorage is not being included in the `overrideConfig.vars` correctly. This causes the AI to respond without mood context.
+
+**Expected behavior:**
+```typescript
+overrideConfig: {
+  vars: {
+    current_mood: "neutral",
+    mood_history_7d: [...],
+    mood_trend: "improving"
+  }
+}
+```
+
+**Actual behavior:**
+Variables are undefined or empty array.
+
+**Location:** `src/fn/chat.ts` or `src/lib/flowise/client.ts`
+
+---
+
+## Affected Area
+
+Flowise Integration, Server Actions
+```
+
+---
+
+### Example 10: Security issue
+
+**Title:** Missing auth guard in saveMoodEntry data-access function
+
+**Labels:** `security`, `bug`, `Prio 1` 🔴
+
+```markdown
+## Source
+
+🔧 Engineering team
+
+**Stakeholder:** —
+**Reported by:** Code review
+
+---
+
+## Description
+
+The `saveMoodEntry()` function in `src/data-access/mood.ts` is missing the required `requireUserMatch()` authentication guard. This allows any authenticated user to potentially save mood entries for other users.
+
+**Fix required:**
+```typescript
+// Add at start of function:
+requireUserMatch(userId);
+```
+
+**CRITICAL:** All data-access functions MUST check authentication.
+
+---
+
+## Affected Area
+
+Data Access Layer, Security
+```
+
+---
+
+## Quick Reference
+
+**Creating a task/issue checklist:**
+
+1. ☐ Write clear, concise title (feature name, bug description, or research question)
+2. ☐ Add appropriate labels:
+   - **New features:** `feature-design` (design) or `feature-dev` (implementation)
+   - **Bugs:** `bug` + area (e.g., `frontend`, `backend`, `integration`)
+   - **Improvements:** `improvement` + area
+   - **Research:** `research`
+   - **Can combine:** e.g., `design` + `frontend` for design implementation
+3. ☐ Add priority label if known (`Prio 1`, `Prio 2`, or `Prio 3`) – optional
+4. ☐ Select source (Clinical / Engineering / Research / Product discovery)
+5. ☐ Add stakeholder name if applicable
+6. ☐ Write short description
+   - **Features:** What's the goal? What problem does it solve?
+   - **Bugs:** What's broken? Expected vs. actual behavior
+   - **Design:** Focus on user experience, visual specs, interactions
+   - **Engineering:** Include technical requirements, implementation notes, affected files/layers
+7. ☐ Specify affected area(s)
+8. ☐ Add technical notes for engineering tasks (schema, API contracts, security considerations)
+9. ☐ Add Figma/screenshot only if relevant
+10. ☐ Add acceptance criteria for features (when is it done?)
+
+---
+
+## Repository Info
+
+- **Organization:** Maji-Studio
+- **Repository:** onooji-app
+- **Project Board:** https://github.com/orgs/Maji-Studio/projects/[project-number]

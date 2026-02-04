@@ -1,0 +1,411 @@
+# Onooji Engineering Issue Tracker
+
+> Reference document for creating engineering implementation issues (frontend, backend, bugs) in the `Maji-Studio/onooji-app` repository.
+
+---
+
+## Overview
+
+Use this guide when tracking engineering work, bugs, or implementation issues. The user will describe issues conversationally – your job is to turn that into a clear, actionable GitHub issue.
+
+**Key Principles:**
+- Focus on implementation details, not design intent
+- Include technical context (files, layers, architecture patterns)
+- Specify whether frontend, backend, or full-stack
+- Reference the layered architecture when relevant
+
+---
+
+## What You'll Hear About
+
+Common engineering issues:
+
+**Frontend:**
+- **Component bugs** – broken interactions, state not updating, props issues
+- **Styling issues** – spacing off, colors wrong, responsive breakpoints
+- **Missing states** – hover, active, disabled, focus states
+- **Accessibility** – missing ARIA, keyboard nav, screen reader support
+- **Performance** – slow renders, unnecessary re-renders
+
+**Backend:**
+- **API bugs** – endpoints failing, wrong responses, validation issues
+- **Database issues** – missing migrations, schema errors, constraint violations
+- **Auth problems** – missing guards, permission issues, session bugs
+- **Integration failures** – Flowise errors, Onooji API issues, email sending
+- **Server action bugs** – ActionResult errors, validation failures
+
+**Full-Stack:**
+- **Data flow issues** – data not passing between layers correctly
+- **Architecture violations** – skipping layers, wrong import patterns
+- **Missing functionality** – feature partially implemented
+
+---
+
+## Issue Template
+
+**Simple Template:**
+```markdown
+## Problem
+
+[What's broken or missing]
+
+---
+
+## Location
+
+[File paths, component names, or affected layers]
+
+---
+
+## Technical Details (optional)
+
+[Stack traces, error messages, reproduction steps]
+```
+
+**Detailed Template (for complex issues):**
+```markdown
+## Problem
+
+[What's broken or missing]
+
+---
+
+## Expected Behavior
+
+[What should happen]
+
+---
+
+## Current Behavior
+
+[What actually happens]
+
+---
+
+## Location
+
+[File paths, component names, or affected layers]
+
+---
+
+## Architecture Layer
+
+[Component / Hook / Server Fn / Use Case / Data Access / Database]
+
+---
+
+## Reproduction Steps
+
+1. [Step 1]
+2. [Step 2]
+3. [Expected vs. actual outcome]
+
+---
+
+## Technical Details
+
+[Error messages, stack traces, relevant code snippets]
+
+---
+
+## Proposed Solution (optional)
+
+[Suggested fix or approach]
+```
+
+---
+
+## Examples
+
+### Example 1: Frontend component bug
+
+> "The mood slider doesn't update when you drag it"
+
+**Title:** Mood slider value not updating on drag
+
+**Labels:** `bug`, `frontend`, `Prio 1`
+
+```markdown
+## Problem
+
+The mood slider component doesn't update its value when dragging. The visual position changes but the actual value stays at initial state.
+
+---
+
+## Location
+
+`src/components/mood-slider/MoodSlider.tsx`
+
+---
+
+## Architecture Layer
+
+Component (hooks issue)
+
+---
+
+## Technical Details
+
+Likely missing state update in the `onChange` handler. Check if `useMoodSlider()` hook is properly handling the `setMoodValue()` mutation.
+```
+
+---
+
+### Example 2: Backend auth guard missing
+
+> "Users can save mood entries for other users"
+
+**Title:** Missing auth guard in saveMoodEntry allows unauthorized access
+
+**Labels:** `security`, `bug`, `backend`, `Prio 1` 🔴
+
+```markdown
+## Problem
+
+The `saveMoodEntry()` function in data-access layer is missing `requireUserMatch()` guard, allowing any authenticated user to save mood entries for other users.
+
+---
+
+## Location
+
+`src/data-access/mood.ts`, line ~45
+
+---
+
+## Architecture Layer
+
+Data Access
+
+---
+
+## Proposed Solution
+
+Add `requireUserMatch(userId)` at the start of the function:
+
+\`\`\`typescript
+export function saveMoodEntry(userId: string, entry: MoodEntry) {
+  requireUserMatch(userId); // Add this
+  // ... rest of function
+}
+\`\`\`
+```
+
+---
+
+### Example 3: Integration issue
+
+> "Chat messages not sending to Flowise, getting 401 error"
+
+**Title:** Flowise API returns 401 Unauthorized for chat messages
+
+**Labels:** `bug`, `integration`, `Prio 1`
+
+```markdown
+## Problem
+
+Chat messages fail to send to Flowise API with 401 Unauthorized error.
+
+---
+
+## Current Behavior
+
+- User types message and clicks send
+- Loading state shows briefly
+- Error toast appears: "Failed to send message"
+- Console shows: `POST /api/flowise/chat 401`
+
+---
+
+## Location
+
+`src/lib/flowise/client.ts`
+
+---
+
+## Technical Details
+
+Error response:
+\`\`\`
+{
+  "statusCode": 401,
+  "message": "Unauthorized"
+}
+\`\`\`
+
+Check if `FLOWISE_BASE_API` environment variable is set correctly in production. May be missing or expired API token.
+```
+
+---
+
+### Example 4: Database migration needed
+
+> "Need to add notification_enabled column to user_settings"
+
+**Title:** Add notification_enabled column to app_user_settings table
+
+**Labels:** `database`, `backend`, `Prio 2`
+
+```markdown
+## Problem
+
+Need to add a column to track whether user has notifications enabled at all (master toggle).
+
+---
+
+## Location
+
+`src/db/schema/user-settings.ts`
+
+---
+
+## Technical Details
+
+Add to schema:
+\`\`\`typescript
+notificationEnabled: boolean("notification_enabled").default(true).notNull()
+\`\`\`
+
+Then:
+1. Run `pnpm db:generate`
+2. Review generated SQL
+3. Apply migration with `pnpm db:push` (after review!)
+
+**CRITICAL:** Database is shared with Flowise - review SQL carefully before applying.
+```
+
+---
+
+### Example 5: Architecture violation
+
+> "Component is importing directly from database instead of using server action"
+
+**Title:** ProfileSettings importing db directly instead of using server action
+
+**Labels:** `bug`, `backend`, `Prio 2`
+
+```markdown
+## Problem
+
+`ProfileSettings.tsx` component is importing `db` directly and making database queries, violating the layered architecture.
+
+---
+
+## Location
+
+`src/components/settings/ProfileSettings.tsx`
+
+---
+
+## Architecture Layer
+
+Component → should use → Server Fn → Use Case → Data Access → Database
+
+---
+
+## Current Behavior
+
+\`\`\`typescript
+import { db } from "@/db"  // ❌ Wrong!
+\`\`\`
+
+---
+
+## Proposed Solution
+
+1. Create server action in `src/fn/settings.ts`
+2. Create data-access function with auth guard
+3. Component calls server action via React Query hook
+4. Follow WebDevCody pattern from CLAUDE.md
+```
+
+---
+
+### Example 6: Performance issue
+
+> "Chat page takes 3 seconds to load"
+
+**Title:** Chat page has slow initial load time (~3s)
+
+**Labels:** `performance`, `frontend`, `Prio 2`
+
+```markdown
+## Problem
+
+Chat page takes approximately 3 seconds to render on initial load, much slower than other pages.
+
+---
+
+## Location
+
+`app/(app)/chat/page.tsx`
+
+---
+
+## Reproduction Steps
+
+1. Navigate to `/chat` from another page
+2. Observe loading time
+3. Page takes ~3s to show chat interface
+
+---
+
+## Technical Details
+
+Check for:
+- Unnecessary data fetching in React Query hooks
+- Large bundle imports (dynamic import heavy components?)
+- Blocking server component data fetches
+- Missing Suspense boundaries
+
+Use React DevTools Profiler to identify bottleneck.
+```
+
+---
+
+## Instructions for the LLM
+
+1. Listen to user's technical description
+2. Create clear, specific title (mention the file/component if possible)
+3. Choose appropriate labels (`bug`, `frontend`, `backend`, `integration`, etc.)
+4. Include file paths and layer information
+5. Add reproduction steps for bugs
+6. Include error messages/stack traces if provided
+7. Keep it concise but technical enough for developers
+8. Reference architecture patterns from CLAUDE.md when relevant
+
+---
+
+## Architecture Quick Reference
+
+When describing issues, reference these layers:
+
+```
+Component (UI)
+    ↓
+hooks/ (React Query)
+    ↓
+fn/ (Server functions - "use server")
+    ↓
+use-cases/ (Business logic - pure functions)
+    ↓
+data-access/ (Storage + auth guards)
+    ↓
+db/ (Database)
+```
+
+**Key Files:**
+- Components: `src/components/`
+- Server Actions: `src/fn/`
+- Business Logic: `src/use-cases/`
+- Data Access: `src/data-access/`
+- Database Schema: `src/db/schema/`
+- Flowise Client: `src/lib/flowise/`
+- Auth: `src/lib/auth/`
+
+---
+
+## Repository Info
+
+- **Organization:** Maji-Studio
+- **Repository:** onooji-app
+- **Architecture Docs:** `.claude/CLAUDE.md`
