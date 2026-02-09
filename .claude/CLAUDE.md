@@ -19,7 +19,8 @@
 
 ## Validation + Export
 - Validate structure with `python3 scripts/knowledge_validate.py --file <project-page>`.
-- Export JSON with `python3 scripts/knowledge_export.py --input <project-page> --output <json-file>`.
+- Export JSON with `python3 scripts/knowledge_export.py --input <project-page>`.
+- Keep exports in `exports/` (centralized) and retain all versions.
 
 ## Research Enrichment
 - Use web search when external facts are needed.

@@ -29,5 +29,9 @@ Repository for creating, maintaining, and exporting section-based knowledge page
 
 ## Export Rules
 - Markdown is source of truth.
+- Keep exports centralized under `exports/`, not under `knowledge/projects/`.
+- Exports must be grouped per project under `exports/<project_id>/...`.
+- Keep all exports forever.
 - JSON exports are generated artifacts via:
-  - `python3 scripts/knowledge_export.py --input <project-page> --output <json-file>`
+  - `python3 scripts/knowledge_export.py --input <project-page>`
+  - If needed, explicit output still works: `--output <json-file>`

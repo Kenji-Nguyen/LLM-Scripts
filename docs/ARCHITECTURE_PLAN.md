@@ -20,6 +20,7 @@ Build a simple, long-term knowledge repository for all clients/products where LL
 - `knowledge/templates/`: reusable section templates.
 - `scripts/knowledge_validate.py`: structural validation.
 - `scripts/knowledge_export.py`: markdown to JSON export.
+- `exports/`: centralized generated artifacts (`exports/<project_id>/<type>/...`) with `exports/manifest.jsonl`.
 
 ## Content Model (9 Sections)
 Each project page contains these sections:
@@ -63,6 +64,12 @@ Avoid now:
 - many subagents
 - complex hook chains
 - automatic cross-file rewrites
+
+## Export Policy
+- Do not store exports inside `knowledge/projects/`.
+- Keep exports in centralized `exports/`.
+- Keep all export versions forever.
+- Use timestamped unique filenames with project/type/title/lang metadata.
 
 ## Rollout Plan
 

@@ -10,6 +10,7 @@ Use section-based markdown pages (not many tiny files) and keep every update tra
 - Architecture and rollout plan: `docs/ARCHITECTURE_PLAN.md`
 - Workflow playbook: `docs/WORKFLOWS.md`
 - Export guide: `docs/EXPORTS.md`
+- Export root (generated artifacts): `exports/`
 - Project page template: `knowledge/templates/PROJECT_KNOWLEDGE.template.md`
 - Section snippets (Persona, PRD, FRD, etc.): `knowledge/templates/SECTION_SNIPPETS.md`
 - Interview ingest template: `knowledge/templates/INTERVIEW_INGEST.template.md`

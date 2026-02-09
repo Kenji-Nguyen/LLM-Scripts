@@ -1,0 +1,144 @@
+{
+  "source_file": "knowledge/projects/manukai/PROJECT_KNOWLEDGE.md",
+  "frontmatter": {
+    "doc_id": "proj-manukai-main",
+    "project_id": "manukai",
+    "title": "Manukai Project Knowledge",
+    "language_mode": "EN",
+    "status": "active",
+    "last_updated": "2026-02-08",
+    "owners": "Maji Team"
+  },
+  "sections": [
+    {
+      "title": "Project Snapshot",
+      "content": "- Name: Manukai\n- Goal: AI-powered CNC programming automation platform that accelerates NC code generation by analyzing production history to find geometrically similar features and adapt proven machining operations to new parts\n- Stage: Active development (Beta/MVP)\n- Stakeholders: Manukai (product company), Maji (design & engineering partner)\n- Core value: Up to 80% reduction in programming time, 15% reduction in cycle times\n- Deployment: 100% on-premise (no internet required, full data privacy)\n- Tagline: \"Write Better CNC Programs Faster\"\n- App type: Standalone desktop application (Electron + React frontend, Python/FastAPI backend)\n- AI/ML: Separate backend/ML team handles feature detection and similarity algorithms",
+      "subsections": [
+        {
+          "title": "Supported CAM Systems",
+          "content": "- Mastercam\n- TopSolid\n- GibbsCAM\n- Siemens NX\n- Fusion 360\n- Additional systems upon request"
+        },
+        {
+          "title": "Current Clients",
+          "content": "| Client | Location | CAM System | Notes |\n|--------|----------|------------|-------|\n| PSI | Switzerland | TopSolid, Hypermill | Multiple interviewees, 12-person team |\n| Bosch | Schwieberdingen, Germany | Siemens NX | 5-axis CNC, focus on precision |\n| Straumann | ? | ? | Medical devices |"
+        }
+      ]
+    },
+    {
+      "title": "Linked Pages",
+      "content": "- GitHub issues: #192-#216 (feature design, research, design system)\n- Figma: (link TBD)",
+      "subsections": []
+    },
+    {
+      "title": "Sources",
+      "content": "- `SRC-001` | type: legacy-migration | date: 2026-02-08 | link/file: `manukai/MANUKAI_KNOWLEDGE.md`\n- `SRC-002` | type: interviews | date: 2025-10 to 2025-12 | link/file: User interviews (PSI, Bosch participants)\n- `SRC-003` | type: web-research | date: 2026-01 | link/file: CAM domain research, competitor analysis",
+      "subsections": []
+    },
+    {
+      "title": "Personas",
+      "content": "",
+      "subsections": [
+        {
+          "title": "CAM Programmer (Primary User)",
+          "content": "- Segment: CNC programmers responsible for creating NC programs\n- Core job to be done: Create reliable, efficient NC programs for new and existing parts\n- Behaviors: 4-20+ years experience, 70%+ time in CAM software, mix of new parts (90%) and optimizations (10%), often sole/limited programmers for multiple machines\n- Needs: Process reliability over speed (especially low-volume), tool life/Standzeit visibility, quality (surface finish, tolerance adherence), clear visualization of proposals, ability to fine-tune and maintain control\n- Pains: Repetitive programming of similar features, no easy way to reuse proven strategies, knowledge loss when colleagues leave, bottleneck for production\n- Evidence refs: `SRC-002`"
+        },
+        {
+          "title": "CNC Operator (Secondary User)",
+          "content": "- Segment: Machine operators who work directly at the CNC machine\n- Core job to be done: Run programs reliably, handle setups and monitoring\n- Behaviors: Works directly at machine, may do simple programming on machine control, often older and less comfortable with new software, handles setups/tool changes/monitoring\n- Needs: Reliable programs that run without issues, simple adjustments when needed\n- Pains: Small adjustments at machine not always fed back to CAM, disconnect between programming and execution\n- Evidence refs: `SRC-002`"
+        }
+      ]
+    },
+    {
+      "title": "Product Requirements",
+      "content": "",
+      "subsections": [
+        {
+          "title": "PRD-001: Similar Feature Search",
+          "content": "- Problem: CAM programmers repeatedly program similar features from scratch, with no systematic way to reuse proven strategies from production history\n- Outcome: Programmers can find geometrically similar features from past projects and apply proven operations to new parts\n- Scope: Search within same Feature Group, filter by material/tool/machine/similarity/roughness/time/programmer/date\n- Non-goals: Cross-Feature-Group search, automatic parameter adjustment\n- Success metrics: Reduction in programming time per feature, adoption rate of suggested operations\n- Evidence refs: `SRC-002`, `SRC-003`"
+        },
+        {
+          "title": "PRD-002: Operation Management",
+          "content": "- Problem: Managing, grouping, and sequencing operations across features is complex and error-prone\n- Outcome: Users can add, edit, group, sequence, and assign operations to features with clear multi-feature support\n- Scope: Operation CRUD, grouping by setup (Spannung/SP1, SP2), drag-and-drop sequencing, multi-feature operation assignment\n- Non-goals: Automatic operation generation without user input\n- Success metrics: Time to complete operation assignment, user satisfaction with operation overview\n- Evidence refs: `SRC-002`"
+        },
+        {
+          "title": "PRD-003: Feature Detection & Assignment",
+          "content": "- Problem: Manual identification and classification of geometric features is time-consuming\n- Outcome: AI automatically detects Feature Groups and individual Features from 3D geometry, with user ability to correct\n- Scope: Auto-detection, manual reassignment, face merging, multi-select for operation assignment\n- Non-goals: User-created custom Feature Group types (list is fixed)\n- Success metrics: Detection accuracy, correction rate\n- Evidence refs: `SRC-002`"
+        },
+        {
+          "title": "PRD-004: CAM System Integration",
+          "content": "- Problem: Operations and tools created in Manukai need to flow back into CAM software\n- Outcome: Seamless export of operations, tools, and sequences to supported CAM systems\n- Scope: Export to TopSolid, MasterCAM, NX; bidirectional import of existing programs\n- Non-goals: Replacing CAM system functionality\n- Success metrics: Export success rate, parameter fidelity\n- Evidence refs: `SRC-002`"
+        }
+      ]
+    },
+    {
+      "title": "Feature Requirements",
+      "content": "",
+      "subsections": [
+        {
+          "title": "FRD-001: 3D Viewer",
+          "content": "- Feature name: Interactive 3D geometry viewer\n- User story: As a CAM programmer, I want to visualize the part geometry and see feature highlights so I can understand what the AI detected\n- Functional requirements: Feature highlighting on selection, tolerance visualization, gizmo controls, linked highlighting with PDF viewer\n- Acceptance criteria: Clicking feature in sidebar highlights in 3D; clicking geometry selects in sidebar list; multi-select supported\n- Dependencies: Feature detection backend\n- Evidence refs: `SRC-002` (Issues #198, #204)"
+        },
+        {
+          "title": "FRD-002: PDF/Technical Drawing Viewer",
+          "content": "- Feature name: Technical drawing viewer with OCR\n- User story: As a CAM programmer, I want to see the technical drawing linked to the 3D model so I can check tolerances and annotations\n- Functional requirements: OCR extraction of tolerances, cross-highlighting with 3D viewer, dimension/surface requirement display\n- Acceptance criteria: Hovering feature in 3D highlights in drawing and vice versa\n- Dependencies: OCR backend\n- Evidence refs: `SRC-002` (Issue #196)"
+        }
+      ]
+    },
+    {
+      "title": "Ideation",
+      "content": "- `IDEA-001`: Standardization — Users define default tools/operations for consistency across team (planned, not implemented)\n- `IDEA-002`: Operation provenance tracking — Explicit tracking of which similar feature an operation was copied from\n- `IDEA-003`: Feature visibility toggle — Hide/show features in 3D view for complex parts",
+      "subsections": []
+    },
+    {
+      "title": "Research Notes",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Key User Research Insights (Oct-Dec 2025)",
+          "content": "**Process Reliability > Speed**\n> \"Im Fräser nicht grosse Serien, Prozesssicherheit ist wichtiger als Zeit\"\n> (In milling, not big series, process reliability is more important than time)\n\n**Trust Building is Critical**\n> \"Er bräuchte ein Vertrauen in die Software\"\n> (He would need trust in the software)\n\n**Copilot Mental Model**\n> \"Er stellt sich Copilot wie Kit bei Knight Rider vor - er tut mir die Sachen vorlegen und ich kontrolliere ob ich einverstanden bin\"\n> (He imagines Copilot like Kit from Knight Rider - it presents things to me and I check if I agree)\n\n**Minimize Operations**\n> \"Er versucht so wenig Operationen wie möglich zu programmieren\"\n> (He tries to program as few operations as possible)"
+        },
+        {
+          "title": "Sorting Preferences (from interviews)",
+          "content": "- By Roughing/Finishing (Schruppen/Schlichten)\n- By planes/levels (Ebenen)\n- By tool (Fräser)\n- Ability to exclude specific operations from sorting"
+        },
+        {
+          "title": "Important Information to Display",
+          "content": "- Tool preview/illustration\n- Material (critical for cutting data)\n- Last edited date (recent = more trustworthy)\n- Time estimate\n- Stock allowance (Aufmass)\n- Tool life/Standzeit\n- Surface roughness requirements"
+        },
+        {
+          "title": "Competitive Landscape",
+          "content": "| Competitor | Approach | Differentiation from Manukai |\n|------------|----------|------------------------------|\n| CloudNC CAM Assist | AI generates new toolpaths | Manukai reuses proven history |\n| LimitlessCNC | AI copilot in Mastercam | ? |\n| Traditional FBM | Template-based feature recognition | Manukai matches whole geometry, not just features |"
+        },
+        {
+          "title": "Open Questions",
+          "content": "- What other clients beyond PSI, Bosch, Straumann?\n- What's the current development phase? (Beta? MVP? Production?)\n- What's the target market size / ideal customer profile?\n- How does the geometry similarity algorithm work?\n- What file formats are supported for import?\n- How is on-premise deployment handled?\n- Can a Feature belong to multiple Parts?\n- What's the difference between Project and Program in practice?\n- Where is the Figma file / design system?\n- What's the current design maturity?"
+        },
+        {
+          "title": "Data Model",
+          "content": "```\nPart ──┬── Technical Drawing (1:*)\n       │\n       ├── Feature Groups (1:*)\n       │       └── Features (1:*)\n       │\n       └── Projects (1:*)\n               └── Program (1:*)\n                       └── Operations (*:*) ── Tools (*:1)\n                              └── Features (*:*)\n```\n\n**Key relationships:**\n- Features and Operations have many-to-many relationship\n- Each Operation uses one Tool\n- Feature Groups are fixed types (auto-detected by AI)\n- Knowledge database is company-specific, grows over time"
+        },
+        {
+          "title": "Feature Groups (EN/DE)",
+          "content": "| Feature Group (EN) | Feature Group (DE) |\n|--------------------|-------------------|\n| Through Hole | Bohrung |\n| Blind Hole | Sackbohrung |\n| Passage | Durchführung |\n| Pocket | Tasche |\n| Chamfer | Kante |\n| Fillet | Rundung |\n| Open Pocket | Offene Tasche |\n| Surface | Oberfläche |\n| Contour | Kontur |"
+        },
+        {
+          "title": "CAM Domain Glossary (DE → EN)",
+          "content": "| German | English |\n|--------|---------|\n| Schruppen | Roughing |\n| Schlichten | Finishing |\n| Bohren | Drilling |\n| Gewindebohren | Tapping/Threading |\n| Fräsen | Milling |\n| Planfräsen | Face milling |\n| Taschenfräsen | Pocket milling |\n| Spannung/Aufspannung | Setup/Clamping |\n| Aufmass | Stock allowance |\n| Schnittdaten | Cutting data |\n| Vorschub | Feed rate |\n| Drehzahl | Spindle speed (RPM) |\n| Werkzeug | Tool |\n| Standzeit | Tool life |\n| Rohteil | Raw part/Stock |\n| Toleranz | Tolerance |\n| Oberflächenrauheit (Ra) | Surface roughness |"
+        },
+        {
+          "title": "Design Patterns & Open Issues",
+          "content": "**Multi-Feature Operations** (Issue #210): One operation can machine multiple features. Open questions around selection UX, timeline display, conflict handling, and feature removal.\n\n**Operation Grouping** (Issue #197): Users group by Setup (SP1, SP2). Convention: `SP1_Teilname`. Open questions about visual display, drag-and-drop, nested vs. flat grouping.\n\n**CAM Export Flow** (Issue #195): Design needed for export to different CAM systems, format handling, and conflict resolution."
+        },
+        {
+          "title": "GitHub Issue Label System",
+          "content": "| Label | Description |\n|-------|-------------|\n| `design` | Design issues |\n| `feature-design` | New feature design |\n| `research` | Research tasks |\n| `visual` | Visual/UI issues |\n| `improvement` | Enhancements |\n| `design-system` | Design system components |\n| `Prio 1/2/3` | Priority levels |"
+        }
+      ]
+    },
+    {
+      "title": "Notes & Decisions",
+      "content": "- 2026-02-08 | Created project page from legacy `manukai/MANUKAI_KNOWLEDGE.md` (SRC-001). Mapped 12 original sections into canonical 9-section format. Data model, glossary, and design patterns moved to Research Notes. Personas, feature areas, and requirements restructured into PRD/FRD format.",
+      "subsections": []
+    }
+  ]
+}

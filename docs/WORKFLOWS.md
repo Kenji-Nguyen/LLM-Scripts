@@ -7,7 +7,7 @@
 4. Update `Product Requirements` or `Feature Requirements` based on validated findings.
 5. Append timestamped note in `## Notes & Decisions`.
 6. Validate with `python3 scripts/knowledge_validate.py`.
-7. Export markdown and JSON as needed.
+7. Export JSON as needed with `python3 scripts/knowledge_export.py --input <project-page>` (writes to `exports/` and logs `exports/manifest.jsonl`).
 
 ## Update Modes
 - `quick_update`: patch one section + notes & decisions entry.

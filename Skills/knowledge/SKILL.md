@@ -38,7 +38,8 @@ See `references/intake-questions.md` for the full list.
 Run: `python3 scripts/knowledge_validate.py --file <project-page>`
 
 ### 5. Export (if requested)
-Run: `python3 scripts/knowledge_export.py --input <project-page> --output <json-file>`
+Run: `python3 scripts/knowledge_export.py --input <project-page>`
+This auto-generates a unique export path under `exports/<project_id>/json/` and appends `exports/manifest.jsonl`.
 
 ## Required page structure (9 sections)
 See `references/content-model.md` for the canonical section list.
