@@ -1,3 +1,6 @@
+> **Canonical version**: `knowledge/projects/manukai/PROJECT_KNOWLEDGE.md`
+> This file is kept for reference. All updates should go to the canonical page.
+
 # Manukai - AI Context Knowledge File
 
 > **Purpose**: AI context file for Claude to understand Manukai in future conversations.

@@ -1,0 +1,1 @@
+../../../skills/frd/SKILL.md

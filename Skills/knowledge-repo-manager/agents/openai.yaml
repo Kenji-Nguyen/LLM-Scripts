@@ -1,0 +1,4 @@
+interface:
+  display_name: "Knowledge Repo Manager"
+  short_description: "Manage bilingual markdown knowledge repositories."
+  default_prompt: "Create, update, validate, and export project knowledge pages and artifacts."

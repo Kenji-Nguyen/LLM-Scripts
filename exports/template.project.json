@@ -1,0 +1,74 @@
+{
+  "source_file": "Knowledge/projects/_template/PROJECT_KNOWLEDGE.md",
+  "frontmatter": {
+    "doc_id": "proj-template-main",
+    "project_id": "template",
+    "title": "Template Project Knowledge",
+    "language_mode": "DE+EN",
+    "status": "draft",
+    "last_updated": "2026-02-08",
+    "owners": "Maji Team"
+  },
+  "sections": [
+    {
+      "title": "Project Snapshot",
+      "content": "- Name: Template\n- Goal:\n- Stage:\n- Stakeholders:",
+      "subsections": []
+    },
+    {
+      "title": "Linked Pages",
+      "content": "- Offering context:\n- Design tracker:\n- Engineering tracker:",
+      "subsections": []
+    },
+    {
+      "title": "Sources",
+      "content": "- `SRC-001` | type: seed | date: 2026-02-08 | link/file: `Knowledge/templates/INTERVIEW_INGEST.template.md`",
+      "subsections": []
+    },
+    {
+      "title": "Personas",
+      "content": "- Add personas here using snippets from `Knowledge/templates/SECTION_SNIPPETS.md`.",
+      "subsections": []
+    },
+    {
+      "title": "Product Requirements",
+      "content": "- Add PRDs here.",
+      "subsections": []
+    },
+    {
+      "title": "Feature Requirements",
+      "content": "- Add FRDs here.",
+      "subsections": []
+    },
+    {
+      "title": "Ideation",
+      "content": "- Add idea backlog here.",
+      "subsections": []
+    },
+    {
+      "title": "User Test Script",
+      "content": "- Add test script blocks here.",
+      "subsections": []
+    },
+    {
+      "title": "Interview Script",
+      "content": "- Add interview script blocks here.",
+      "subsections": []
+    },
+    {
+      "title": "Decisions",
+      "content": "| decision_id | status | statement | rationale | evidence_refs | date | owner |\n|---|---|---|---|---|---|---|\n| `DEC-001` | proposed | Define first project migration scope | Start with one project end-to-end | `SRC-001` | 2026-02-08 | team |",
+      "subsections": []
+    },
+    {
+      "title": "Assumptions",
+      "content": "| assumption_id | status | statement | validation_plan | target_date | linked_decision |\n|---|---|---|---|---|---|\n| `ASM-001` | open | Section-based pages are easier to maintain than many small files | Run for 2 projects and compare update speed | 2026-03-15 | `DEC-001` |",
+      "subsections": []
+    },
+    {
+      "title": "Change Log",
+      "content": "- 2026-02-08 | actor: codex | mode: init | summary: created template project page",
+      "subsections": []
+    }
+  ]
+}

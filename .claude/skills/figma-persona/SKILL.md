@@ -1,0 +1,1 @@
+../../../skills/figma-persona/SKILL.md
