@@ -1,21 +1,24 @@
 # Manukai — User Test: Analytics
 
-**Datum:** [Datum einfügen]
-**Moderator:** [Name einfügen]
-**Dauer:** 60 Minuten
-**Prototyp:** Analytics-Screen (Live-App) + Figma (Use Cases 2–4)
+**Datum:** [Datum einfügen]  
+**Moderation:** [Name einfügen]  
+**Dauer:** 60 Minuten  
+**Prototyp:** Analytics-Bereich (Live-App) + Figma (Use Cases 2–4)
 
 ---
 
 ## Ziele & Forschungsfragen
 
-- Wie nützlich ist ein Analytics-Screen für CAM-Programmierer im Alltag?
+- Wie nützlich ist ein Analytics-Bereich für CAM-Programmierer im Alltag?
 - Welche Daten und Visualisierungen sind am relevantesten?
-- Wie navigieren Nutzer durch Filter, KPIs und Diagramme?
-- Können Nutzer Operationen vergleichen und fundierte Entscheidungen treffen? (Use Case 2)
-- Finden Nutzer problematische Parameter und können sie den Weg zur Korrektur nachvollziehen? (Use Case 3)
+- Wie navigieren Nutzer:innen durch Filter, KPIs und Diagramme?
+- Können Nutzer:innen Operationen vergleichen und fundierte Entscheidungen treffen? (Use Case 2)
+- Verstehen wir, wie viele bestehende Programme Nutzer:innen realistisch vergleichen wollen und welche Vergleichsparameter sie brauchen? (Use Case 2)
+- Finden Nutzer:innen problematische Parameter, und können sie den Weg zur Korrektur nachvollziehen? (Use Case 3)
+- Ist das Tab-Pattern nützlich, um aus Analytics heraus mehrere Projekte parallel zu öffnen und zu vergleichen? (Use Case 3)
 - Ist der Batch-Edit-Flow für Werkzeugwechsel verständlich? (Use Case 4)
-- Wie viel Vertrauen haben Nutzer in die dargestellten Daten?
+- Ist klar, was beim Ersetzen eines Werkzeugs genau ersetzt wird und wie mit abweichenden Parametern umgegangen wird? (Use Case 4)
+- Wie viel Vertrauen haben Nutzer:innen in die dargestellten Daten?
 
 ---
 
@@ -23,10 +26,10 @@
 
 | Aspekt | Details |
 |--------|---------|
-| Testpersonen | 5 erfahrene CAM-Programmierer (bestehende Manukai-Nutzer) |
-| Prototyp | Analytics: voll klickbare Live-App / Use Cases 2–4: Figma-Prototyp |
+| CAM-Programmierer:innen | 5 erfahrene CAM-Programmierer:innen (bestehende Manukai-Nutzer:innen) |
+| Prototyp | Analytics: vollständig klickbare Live-App / Use Cases 2–4: Figma-Prototyp |
 | Aufzeichnung | Bildschirm + Audio |
-| Notizen | Moderator + ggf. Beobachter |
+| Notizen | Moderation + ggf. Beobachter |
 
 ---
 
@@ -34,77 +37,77 @@
 
 | Thema | Zusammenfassung |
 |-------|-----------------|
-| Gesamteindruck | [nach Test ausfüllen] |
-| Wichtigste Erkenntnisse | [nach Test ausfüllen] |
-| Kritische Probleme | [nach Test ausfüllen] |
+| Gesamteindruck | [nach dem Test ausfüllen] |
+| Wichtigste Erkenntnisse | [nach dem Test ausfüllen] |
+| Kritische Probleme | [nach dem Test ausfüllen] |
 
 ---
 
 ## Intro (5 Min.)
 
-> Hallo [Name], danke dass du dir die Zeit nimmst.
+> Hallo [Name], danke, dass du dir die Zeit nimmst.
 >
-> Wir testen heute neue Funktionen von Manukai — speziell den Analytics-Bereich. Es geht nicht darum, dich zu testen, sondern die Software. Es gibt keine falschen Antworten.
+> Wir testen heute neue Funktionen von Manukai, insbesondere den Analytics-Bereich. Es geht nicht darum, dich zu testen, sondern die Software. Es gibt keine falschen Antworten.
 >
-> Ich werde dir ein paar Aufgaben geben und zwischendurch Fragen stellen.
+> Ich gebe dir ein paar Aufgaben und stelle zwischendurch Fragen.
 
 **Einverständnis und Aufnahme (fixer Text)**
-- Ich würde gerne eine Tonaufnahme machen, nur für interne Auswertung.
-- Nichts davon wird veröffentlicht oder an Dritte weitergegeben.
-- Bist du einverstanden?
+- Ich würde das Gespräch gerne als Audio aufnehmen, ausschließlich für die interne Auswertung.
+- Die Aufnahme wird nicht veröffentlicht und nicht an Dritte weitergegeben.
+- Bist du damit einverstanden?
 
-**Prototyp Hinweis (fixer Text)**
+**Hinweis zum Prototyp (fixer Text)**
 - Das ist teilweise ein Prototyp. Nicht alles ist klickbar.
-- Wenn etwas nicht geht, sag kurz, was du erwartet hättest.
+- Wenn etwas nicht funktioniert, sag bitte kurz, was du erwartet hättest.
 
-**Think aloud (fixer Text)**
+**Think Aloud (fixer Text)**
 - Bitte denke laut: Sag, was du siehst, was du erwartest und warum du etwas anklickst.
 
 ---
 
-## Warm Up (5 Min.)
+## Warm-up (5 Min.)
 
 - Wie sieht dein typischer Arbeitstag aus, wenn du ein neues Teil programmierst?
-- Nutzt du heute irgendwelche Auswertungen oder Übersichten zu deinen Programmen, Werkzeugen oder Maschinen?
-- Wenn ja — was schaust du dir an und warum?
+- Nutzt du heute Auswertungen oder Übersichten zu deinen Programmen, Werkzeugen oder Maschinen?
+- Falls ja: Was schaust du dir an und warum?
 
 ---
 
-## Aufgabe 1: Offene Exploration — Analytics-Screen (15 Min.)
+## Aufgabe 1: Offene Exploration — Analytics-Bereich (15 Min.)
 
 **Szenario:**
 - Du öffnest den Analytics-Bereich von Manukai zum ersten Mal.
 - Schau dich in Ruhe um.
 
 **Anweisung:**
-- Erzähl mir, was du siehst und was du davon hältst.
+- Erzähl mir, was du siehst und wie du die Ansicht einschätzt.
 
 **Follow-ups:**
-- Was fällt dir als erstes auf?
+- Was fällt dir als Erstes auf?
 - Was davon wäre für deinen Alltag nützlich?
 
-**Gezielte Frage (nach der offenen Exploration):**
-- Kannst du herausfinden, welches Werkzeug am meisten genutzt wird?
-- Kannst du die Ansicht so filtern, dass du nur Operationen für ein bestimmtes Material siehst?
+**Gezielte Fragen (nach der offenen Exploration):**
+- Kannst du herausfinden, welches Werkzeug am häufigsten genutzt wird?
+- Kannst du die Ansicht so filtern, dass nur Operationen für ein bestimmtes Material angezeigt werden?
 
-| Thema | Frage | TP1 | TP2 | TP3 | TP4 | TP5 |
+| Thema | Frage | PSI - Mathias | Soudronic - Jan | Bosch - Kai | Bruderer - David | Mandatec - xyz |
 |-------|-------|-----|-----|-----|-----|-----|
 | **Erster Eindruck** | | | | | | |
-| | Was versteht der Nutzer sofort? | | | | | |
+| | Was verstehen sie sofort? | | | | | |
 | | Was ist unklar oder verwirrend? | | | | | |
 | **KPI-Karten** | | | | | | |
-| | Welche Zahlen fallen auf? | | | | | |
+| | Welche Zahlen fallen besonders auf? | | | | | |
 | | Fehlen Kennzahlen? | | | | | |
 | **Diagramme** | | | | | | |
-| | Welches Diagramm schaut er zuerst an? | | | | | |
-| | Versteht er die Achsen und Datenpunkte? | | | | | |
-| | Welches Diagramm findet er am nützlichsten? | | | | | |
+| | Welches Diagramm betrachten sie zuerst? | | | | | |
+| | Verstehen sie Achsen und Datenpunkte? | | | | | |
+| | Welches Diagramm ist aus ihrer Sicht am nützlichsten? | | | | | |
 | **Filter** | | | | | | |
-| | Findet er die Filter? | | | | | |
-| | Kann er nach Material filtern? | | | | | |
-| | Findet er das meistgenutzte Werkzeug? | | | | | |
+| | Finden sie die Filter? | | | | | |
+| | Können sie nach Material filtern? | | | | | |
+| | Finden sie das meistgenutzte Werkzeug? | | | | | |
 | **Relevanz** | | | | | | |
-| | Würde er den Analytics-Screen im Alltag nutzen? | | | | | |
+| | Würden sie den Analytics-Bereich im Alltag nutzen? | | | | | |
 | | Für welche Fragestellungen? | | | | | |
 
 ---
@@ -114,55 +117,77 @@
 **Szenario:**
 - Du bist im automatisierten Programmier-Flow und hast ein Feature ausgewählt, für das du eine neue Operation anlegen willst.
 - Manukai schlägt dir mehrere Kandidaten-Operationen vor, die bei ähnlichen Features verwendet wurden.
+- Neben der Übersicht gibt es einen Tab **„Analyse“**, in dem du Operationen als Scatter-Plot vergleichen kannst.
 
 **Anweisung:**
 - Vergleiche die vorgeschlagenen Operationen und entscheide dich für eine.
+- Nutze danach den Tab **„Analyse“** und prüfe, ob dir der Diagrammvergleich bei der Entscheidung hilft.
 
 **Follow-ups:**
 - Welche Informationen haben dir bei der Entscheidung geholfen?
-- Fehlt dir etwas, um eine sichere Entscheidung zu treffen?
+- Fehlt dir etwas, um sicher entscheiden zu können?
+- Wie viele bestehende Programme würdest du in so einer Situation typischerweise miteinander vergleichen?
+- Welche Parameter möchtest du im Scatter-Plot vergleichen (z. B. Spindeldrehzahl, Vorschub, Zeit, Werkzeugdurchmesser)?
+- Welche Achsen-Kombinationen wären für dich am sinnvollsten?
+- Wann würdest du eher die Übersicht nutzen, wann den Analyse-Tab?
 
-| Thema | Frage | TP1 | TP2 | TP3 | TP4 | TP5 |
+| Thema | Frage | PSI - Mathias | Soudronic - Jan | Bosch - Kai | Bruderer - David | Mandatec - xyz |
 |-------|-------|-----|-----|-----|-----|-----|
 | **Verständlichkeit** | | | | | | |
-| | Versteht er, was die Kandidaten-Operationen sind? | | | | | |
+| | Verstehen sie, was die Kandidaten-Operationen sind? | | | | | |
 | | Sind die angezeigten Parameter verständlich? | | | | | |
 | **Entscheidungsfindung** | | | | | | |
-| | Wonach entscheidet er sich? (Parameter, Datum, Programmierer?) | | | | | |
-| | Fühlt er sich sicher genug für eine Entscheidung? | | | | | |
-| **Fehlende Infos** | | | | | | |
-| | Welche zusätzlichen Daten würde er brauchen? | | | | | |
-| | Würde er Analytics-Daten in diesem Moment nutzen wollen? | | | | | |
+| | Wonach entscheiden sie? (Parameter, Datum, Programmierer?) | | | | | |
+| | Fühlen sie sich sicher genug für eine Entscheidung? | | | | | |
+| **Vergleichsumfang** | | | | | | |
+| | Wie viele Programme möchten sie realistisch parallel vergleichen? | | | | | |
+| | Ab wann wird der Vergleich zu komplex oder unübersichtlich? | | | | | |
+| **Analyse-Tab (Scatter-Plot)** | | | | | | |
+| | Verstehen sie, was im Scatter-Plot verglichen wird? | | | | | |
+| | Welche X-/Y-Parameter sind aus ihrer Sicht sinnvoll? | | | | | |
+| | Unterstützt der Analyse-Tab die Entscheidung besser als die Listenansicht? | | | | | |
+| **Fehlende Informationen** | | | | | | |
+| | Welche zusätzlichen Daten würden sie brauchen? | | | | | |
+| | Würden sie in diesem Moment Analytics-Daten nutzen wollen? | | | | | |
 
 ---
 
-## Aufgabe 3: Werkzeug-Analyse & Problemerkennung (15 Min.)
+## Aufgabe 3: Werkzeuganalyse & Problemerkennung (15 Min.)
 
 **Szenario:**
-- Du möchtest für ein bestimmtes Werkzeug überprüfen, welche Schnittdaten (Vorschub, Drehzahl, Kühlung) in verschiedenen Programmen verwendet wurden.
+- Du möchtest für ein bestimmtes Werkzeug prüfen, welche Schnittdaten (Vorschub, Drehzahl, Kühlung) in verschiedenen Programmen verwendet wurden.
 - Du hast den Verdacht, dass bei einem Programm die Parameter nicht optimal sind.
+- Während der Analyse möchtest du zusätzlich ein weiteres Projekt öffnen, ohne den aktuellen Analytics-Kontext zu verlieren.
 
 **Anweisung:**
-- Finde das Werkzeug, schau dir die Operationen an, und versuche herauszufinden, welches Programm problematische Parameter hat.
+- Finde das Werkzeug, schau dir die Operationen an und versuche herauszufinden, welches Programm problematische Parameter hat.
+- Öffne danach ein weiteres Projekt in einem neuen Tab und wechsle zwischen beiden Kontexten.
 
 **Follow-ups:**
 - Wie würdest du jetzt vorgehen, um das Problem zu beheben?
-- Ist der Weg vom Analytics-Screen bis zur CAM-Korrektur nachvollziehbar?
+- Ist der Weg vom Analytics-Bereich bis zur CAM-Korrektur nachvollziehbar?
+- Ist das Tab-Pattern für dich sinnvoll, um mehrere Projekte parallel zu prüfen?
+- In welchen Situationen würdest du mehrere Projekte gleichzeitig offen haben wollen?
+- Welche Informationen sollten beim Tab-Wechsel erhalten bleiben?
 
-| Thema | Frage | TP1 | TP2 | TP3 | TP4 | TP5 |
+| Thema | Frage | PSI - Mathias | Soudronic - Jan | Bosch - Kai | Bruderer - David | Mandatec - xyz |
 |-------|-------|-----|-----|-----|-----|-----|
 | **Navigation** | | | | | | |
-| | Findet er das richtige Werkzeug und Material? | | | | | |
-| | Kann er die Operation mit verdächtigen Werten identifizieren? | | | | | |
-| **Drill-Down** | | | | | | |
-| | Versteht er den Weg: Werkzeug → Operation → Programm → Teil? | | | | | |
-| | Findet er die Projekt-/Programm-Verlinkung? | | | | | |
+| | Finden sie das richtige Werkzeug und Material? | | | | | |
+| | Können sie die Operation mit verdächtigen Werten identifizieren? | | | | | |
+| **Drill-down** | | | | | | |
+| | Verstehen sie den Weg: Werkzeug → Operation → Programm → Teil? | | | | | |
+| | Finden sie die Projekt-/Programm-Verlinkung? | | | | | |
+| **Tab-Pattern** | | | | | | |
+| | Erkennen sie, dass sie ein weiteres Projekt im neuen Tab öffnen können? | | | | | |
+| | Können sie zwischen Tabs wechseln, ohne den Kontext zu verlieren? | | | | | |
+| | Sehen sie einen klaren Nutzen in mehreren gleichzeitig geöffneten Projekten? | | | | | |
 | **Korrektur-Flow** | | | | | | |
-| | Versteht er "Zu CAM wechseln"? | | | | | |
-| | Entspricht der Flow seinen Erwartungen? | | | | | |
+| | Verstehen sie „Zu CAM wechseln“? | | | | | |
+| | Entspricht der Flow ihren Erwartungen? | | | | | |
 | **Vertrauen** | | | | | | |
-| | Vertraut er den angezeigten Parametern? | | | | | |
-| | Welche Informationen stärken/schwächen sein Vertrauen? | | | | | |
+| | Vertrauen sie den angezeigten Parametern? | | | | | |
+| | Welche Informationen stärken oder schwächen das Vertrauen? | | | | | |
 
 ---
 
@@ -171,28 +196,42 @@
 **Szenario:**
 - Du hast ein neues Werkzeug getestet, das bei einem bestimmten Feature doppelt so schnell ist wie das alte.
 - Jetzt willst du alle alten Programme finden, die noch das alte Werkzeug verwenden, und es durch das neue ersetzen.
+- Das neue Werkzeug unterscheidet sich teilweise in relevanten Parametern (z. B. Durchmesser, Vorschub, Spindeldrehzahl).
 
 **Anweisung:**
 - Finde die betroffenen Programme und tausche das Werkzeug aus.
+- Definiere dabei, was genau ersetzt werden soll (nur Werkzeugreferenz oder auch Parameterwerte).
 
 **Follow-ups:**
 - Ist klar, was nach dem Batch-Edit passiert?
 - Würdest du diesen Flow im Alltag verwenden?
+- Welche Parameter sollten automatisch übernommen, angepasst oder manuell bestätigt werden?
+- Welche Risiken siehst du beim Ersetzen über mehrere Programme hinweg?
+- Welche Kontrolle erwartest du vor dem finalen Übernehmen (Vorschau, Konflikthinweise, Rückgängig)?
 
-| Thema | Frage | TP1 | TP2 | TP3 | TP4 | TP5 |
+| Thema | Frage | PSI - Mathias | Soudronic - Jan | Bosch - Kai | Bruderer - David | Mandatec - xyz |
 |-------|-------|-----|-----|-----|-----|-----|
 | **Suche & Filter** | | | | | | |
-| | Findet er das alte Werkzeug in der Wissensdatenbank? | | | | | |
-| | Kann er die betroffenen Operationen identifizieren? | | | | | |
+| | Finden sie das alte Werkzeug in der Wissensdatenbank? | | | | | |
+| | Können sie die betroffenen Operationen identifizieren? | | | | | |
 | **Batch-Edit** | | | | | | |
-| | Versteht er die Multi-Select-Funktion? | | | | | |
+| | Verstehen sie die Multi-Select-Funktion? | | | | | |
 | | Ist der Batch-Edit-Dialog verständlich? | | | | | |
+| **Ersetzungsumfang** | | | | | | |
+| | Verstehen sie, was genau ersetzt wird? | | | | | |
+| | Erwarten sie nur einen Werkzeugtausch oder auch Parameter-Anpassungen? | | | | | |
+| **Parameter-Mapping** | | | | | | |
+| | Welche Parameter müssen aus ihrer Sicht geprüft werden (z. B. Durchmesser, Vorschub, Drehzahl, Kühlung)? | | | | | |
+| | Welche Parameter dürfen automatisch gesetzt werden, welche nur manuell? | | | | | |
 | **Nachvollziehbarkeit** | | | | | | |
-| | Versteht er den "Änderungsvorschlag"-Status? | | | | | |
+| | Verstehen sie den Status „Änderungsvorschlag“? | | | | | |
 | | Ist klar, was beim nächsten CAM-Öffnen passiert? | | | | | |
+| **Sicherheit & Kontrolle** | | | | | | |
+| | Erwarten sie eine Vorschau der Auswirkungen vor dem Bestätigen? | | | | | |
+| | Ist ein Rückgängig-/Rollback-Mechanismus erforderlich? | | | | | |
 | **Alltagsrelevanz** | | | | | | |
-| | Wie oft kommt ein Werkzeugwechsel bei ihm vor? | | | | | |
-| | Würde er den Flow nutzen oder lieber manuell vorgehen? | | | | | |
+| | Wie oft kommt ein Werkzeugwechsel bei ihnen vor? | | | | | |
+| | Würden sie den Flow nutzen oder lieber manuell vorgehen? | | | | | |
 
 ---
 
@@ -201,16 +240,16 @@
 > Danke, das war die letzte Aufgabe. Zum Abschluss noch ein paar kurze Fragen.
 
 **Offene Fragen:**
-- Wenn du den Analytics-Screen in einem Wort beschreiben müsstest — welches wäre das?
+- Wenn du den Analytics-Bereich mit einem Wort beschreiben müsstest: Welches wäre es?
 - Gibt es etwas, das du vermisst hast?
-- Welche der Funktionen, die du gesehen hast, wäre für dich am nützlichsten?
+- Welche der gezeigten Funktionen wäre für dich am nützlichsten?
 
-**Abschluss-Bewertung (1–5 Skala):**
+**Abschlussbewertung (Skala 1–5):**
 
-| Frage | TP1 | TP2 | TP3 | TP4 | TP5 |
+| Frage | PSI - Mathias | Soudronic - Jan | Bosch - Kai | Bruderer - David | Mandatec - xyz |
 |-------|-----|-----|-----|-----|-----|
 | Gesamteindruck: Wie bewertest du den Analytics-Bereich insgesamt? (1 = sehr schlecht, 5 = sehr gut) | | | | | |
-| Visuelles Design: Wie findest du das visuelle Design? (1 = sehr schlecht, 5 = sehr gut) | | | | | |
+| Visuelles Design: Wie bewertest du das visuelle Design? (1 = sehr schlecht, 5 = sehr gut) | | | | | |
 | Verständlichkeit: Wie klar und verständlich war die Bedienung? (1 = sehr unklar, 5 = sehr klar) | | | | | |
 
 > Danke für deine Zeit und dein Feedback!
