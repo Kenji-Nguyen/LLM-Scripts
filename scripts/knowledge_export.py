@@ -70,13 +70,22 @@ def slugify(value: str) -> str:
     return value or "untitled"
 
 
-def next_revision(path_without_rev: str, ext: str) -> int:
+def next_revision(manifest_path: Path, source_file: str) -> int:
+    """Determine the next revision number by counting prior exports of the same source file."""
     rev = 1
-    while True:
-        candidate = Path(f"{path_without_rev}__r{rev:02d}.{ext}")
-        if not candidate.exists():
-            return rev
-        rev += 1
+    if manifest_path.exists():
+        with manifest_path.open("r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    entry = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if entry.get("source_file") == source_file:
+                    rev += 1
+    return rev
 
 
 def build_auto_output_path(
@@ -85,6 +94,7 @@ def build_auto_output_path(
     artifact_type: str,
     title_override: str | None,
     lang_override: str | None,
+    source_file: str = "",
 ) -> Path:
     project_id = slugify(project_id_override or frontmatter.get("project_id", "unknown-project"))
     artifact = slugify(artifact_type)
@@ -93,10 +103,10 @@ def build_auto_output_path(
 
     timestamp = dt.datetime.now().strftime("%Y-%m-%d_%H%M%S")
     base_dir = Path("exports") / project_id / artifact
+    manifest_path = Path("exports") / project_id / "manifest.jsonl"
     stem_without_rev = f"{timestamp}__{project_id}__{artifact}__{title}__{lang}"
-    path_without_rev = str(base_dir / stem_without_rev)
-    rev = next_revision(path_without_rev, "json")
-    return Path(f"{path_without_rev}__r{rev:02d}.json")
+    rev = next_revision(manifest_path, source_file)
+    return base_dir / f"{stem_without_rev}__r{rev:02d}.json"
 
 
 def effective_project_id(frontmatter: dict, project_id_override: str | None) -> str:
@@ -169,6 +179,7 @@ def main() -> int:
         artifact_type=args.artifact_type,
         title_override=args.title,
         lang_override=args.lang,
+        source_file=str(path),
     )
 
     # Keep exports collected under project scope.

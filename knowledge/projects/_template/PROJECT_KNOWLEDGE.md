@@ -1,5 +1,5 @@
 ---
-doc_id: proj-template-main
+doc_id: proj-template-instance
 project_id: template
 title: Template Project Knowledge
 language_mode: DE+EN
