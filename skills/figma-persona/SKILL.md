@@ -19,17 +19,23 @@ This is a standalone output skill. It does NOT update knowledge pages. For updat
 
 ## Output contract
 
-Output ONLY the markdown content, nothing else. One persona per output.
-Use this exact DSL:
+Output ONLY the markdown content, nothing else. One board per output.
+Use this DSL:
 
 - `Chip: <text>` optional
 - `# Persona: <title>` required
 - `Emoji: <emoji>` optional
 - For each section:
-  - `## <SectionTitle>` optional, repeatable, any order
-  - `Subtitle: <one line>` optional
-  - `- <item text>` for stickies
-  - `- (Other) <item text>` for grey stickies in the right lane
+  - `## <SectionTitle>` required for each category
+  - Either classic mode OR grouped-insights mode:
+    - Classic mode:
+      - `Subtitle: <one line>` optional
+      - `- <item text>` for stickies
+      - `- (Other) <item text>` for grey stickies in the right lane
+    - Grouped-insights mode:
+      - `### <GroupTitle>` one per bullet group/cluster
+      - `- <item text>` bullets inside the current group
+      - `- (Other) <item text>` optional grey bullet inside the current group
 
 No extra formatting, no bold, no links, no nested lists, no numbering.
 
@@ -67,6 +73,16 @@ If the input includes additional buckets (like "Questions", "Risks", "Opportunit
 Keep section titles short (1 to 3 words).
 
 Section color order is handled by the plugin, so do not mention colors.
+
+## Grouped-insights rules
+
+Use grouped-insights mode when the input contains clusters/themes with supporting bullets.
+In grouped-insights mode:
+- each `###` group should be a short theme label (max ~55 chars)
+- include 1 to 5 bullets per group
+- avoid empty groups
+- do not mix random standalone bullets outside groups
+- do not use `Subtitle:` unless the user explicitly asks for classic mode
 
 ## Subtitle rules
 
