@@ -31,6 +31,7 @@ Use section-based markdown pages (not many tiny files) and keep every update tra
 - `skills/test/SKILL.md` — User test script generator
 
 ## Project Pages
+- Dark Earth Carbon: `knowledge/projects/dark-earth-carbon/PROJECT_KNOWLEDGE.md`
 - Manukai: `knowledge/projects/manukai/PROJECT_KNOWLEDGE.md`
 - Template: `knowledge/projects/_template/PROJECT_KNOWLEDGE.md`
 - Legacy Manukai source (archived): `manukai/MANUKAI_KNOWLEDGE.md`
