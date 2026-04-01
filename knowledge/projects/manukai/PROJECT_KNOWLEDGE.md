@@ -245,7 +245,7 @@ Part ──┬── Technical Drawing (1:*)
 | Label | Description |
 |-------|-------------|
 | `design` | Design issues |
-| `feature-design` | New feature design |
+| `feature` | New feature design |
 | `research` | Research tasks |
 | `visual` | Visual/UI issues |
 | `improvement` | Enhancements |
