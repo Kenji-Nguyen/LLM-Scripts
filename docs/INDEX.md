@@ -33,6 +33,7 @@ Use section-based markdown pages (not many tiny files) and keep every update tra
 ## Project Pages
 - Dark Earth Carbon: `knowledge/projects/dark-earth-carbon/PROJECT_KNOWLEDGE.md`
 - Manukai: `knowledge/projects/manukai/PROJECT_KNOWLEDGE.md`
+- Postpartum Initiative: `knowledge/projects/postpartum-initiative/PROJECT_KNOWLEDGE.md`
 - Template: `knowledge/projects/_template/PROJECT_KNOWLEDGE.md`
 - Legacy Manukai source (archived): `manukai/MANUKAI_KNOWLEDGE.md`
 - Legacy Onooji sources (pending migration): `onooji/`

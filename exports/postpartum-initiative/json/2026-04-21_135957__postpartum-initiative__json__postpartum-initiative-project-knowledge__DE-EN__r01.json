@@ -1,0 +1,144 @@
+{
+  "source_file": "knowledge/projects/postpartum-initiative/PROJECT_KNOWLEDGE.md",
+  "frontmatter": {
+    "doc_id": "proj-postpartum-initiative-main",
+    "project_id": "postpartum-initiative",
+    "title": "Postpartum Initiative — Project Knowledge",
+    "language_mode": "DE+EN",
+    "status": "active",
+    "last_updated": "2026-04-21",
+    "owners": "Maji Team, Belinda von Niederhaeusern"
+  },
+  "sections": [
+    {
+      "title": "Project Snapshot",
+      "content": "- Name: Postpartum Initiative\n- Goal: Build an integrated digital care platform for women after birth, addressing the structural care gap in the first year postpartum (after the 56-day Wochenbett period)\n- Stage: Problem space validated, product definition and MVP scope in progress\n- Country: Switzerland (German-speaking region first)\n- Stakeholders: Belinda von Niederhaeusern (PhD, Initiator), Maji Team, Medgate (potential partner)\n- Timeline: Concept, scope, and validatable first scope by end of summer 2026\n- Budget: CHF 10'000–20'000 for initial external contribution\n- Key insight: Not a single medical service gap, but a low-threshold digital entry point with orientation, triage, matching, and continuous support into a fragmented postpartum care landscape",
+      "subsections": []
+    },
+    {
+      "title": "Linked Pages",
+      "content": "- Offering context: Scoping & validation engagement (strategy, scope, prototype)\n- Design tracker: —\n- Engineering tracker: —",
+      "subsections": []
+    },
+    {
+      "title": "Sources",
+      "content": "- `SRC-001` | type: workshop | date: 2026-03-24 | file: Summary_Postpartum Workshop_24.03.2026.pdf\n- `SRC-002` | type: report | date: 2026-04-01 | file: PostpartumInitiative_ExecSummary_April2026.pdf\n- `SRC-003` | type: email | date: 2026-04-01 | file: Medgate-Rueckmeldung (Claudine Blaser)\n- `SRC-004` | type: seed | date: 2026-04-21 | file: postpartum_knowledge_file.md (consolidated knowledge file)",
+      "subsections": []
+    },
+    {
+      "title": "Personas",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Mutter nach dem Wochenbett (Primary)",
+          "content": "- Segment: Women in the first year after birth, especially after the 6–8 week Wochenbett period\n- Core job to be done: Get reliable orientation, support, and connection to appropriate care when the structured postpartum system ends\n- Behaviors: Searches online, asks peers, contacts Hebamme if still available; prioritizes only the most acute problem; delays seeking help due to shame, overwhelm, or lack of clarity on what's \"normal\"\n- Needs: Low-threshold access (phone/chat/app); trustworthy curated information; continuous holistic support (body, psyche, breastfeeding, sleep, relationship, return to work); peer exchange combined with professional guidance; personal tone and reassurance\n- Pains: ~30% report medium- to long-term health complaints; ~60% feel overwhelmed; ~30% have topics they couldn't discuss with anyone; 1 in 3 feels psychologically undersupported; care ends abruptly after 56 days; existing services are fragmented, hard to find, and uncoordinated\n- Evidence refs: `SRC-001`, `SRC-002`"
+        },
+        {
+          "title": "Fachperson (Secondary)",
+          "content": "- Segment: Interdisciplinary care professionals — gynaecology, paediatrics, midwifery, psychotherapy, physiotherapy, nursing, parental counselling, insurance, occupational health\n- Core job to be done: Provide coordinated, quality postpartum care beyond the Wochenbett and receive appropriate referrals\n- Behaviors: Works within own speciality; limited visibility into other services; lacks structured handoff after Wochenbett\n- Needs: Integrated referral pathways; visibility of available services; structured patient information at handoff; quality-assured ecosystem of providers\n- Pains: Services are uncoordinated; quality varies; certain areas genuinely lack coverage; services are not low-threshold or not visible enough\n- Evidence refs: `SRC-001`, `SRC-002`"
+        },
+        {
+          "title": "Partnerin / Medgate (Strategic)",
+          "content": "- Segment: Telehealth and healthcare ecosystem partners (Medgate as primary candidate)\n- Core job to be done: Extend postpartum care reach through digital channels and integrate fragmented services into existing clinical workflows\n- Behaviors: Operates 24/7 GP line, gynaecological consultations, Kids Line; prefers app-based access for consolidated patient information\n- Needs: Curated ecosystem database to embed in clinical guidelines; clear use case and role definition; pilot-ready integration\n- Pains: Fragmented postpartum landscape makes referral difficult; no structured postpartum pathway beyond Wochenbett\n- Evidence refs: `SRC-002`, `SRC-003`"
+        }
+      ]
+    },
+    {
+      "title": "Product Requirements",
+      "content": "",
+      "subsections": [
+        {
+          "title": "PRD-001: Postpartum Care Entry Point Platform",
+          "content": "- Problem: After the 56-day Wochenbett, women fall out of organized care despite ongoing health, psychological, social, and daily-life burdens. Existing services are fragmented, hard to find, inconsistent in quality, and poorly coordinated.\n- Desired outcome: A low-threshold digital entry point that provides orientation, triage, matching, and continuous support — structuring access to a fragmented care landscape rather than replacing all services.\n- Evidence refs: `SRC-001`, `SRC-002` — 94% of mothers want continued support after Wochenbett; ~30% report lasting complaints; ~60% feel overwhelmed\n- Priority: P0\n- Status: problem validated, solution scoping in progress"
+        },
+        {
+          "title": "PRD-002: Medgate Partnership Model",
+          "content": "- Problem: The platform's value depends on connecting to real care providers; Medgate has expressed interest but the partnership model (escalation partner, co-branding, pilot channel, ecosystem role) is undefined.\n- Desired outcome: Clear role definition for Medgate within the platform ecosystem, enabling a concrete pilot use case.\n- Evidence refs: `SRC-003` — Medgate email showing interest in GP, gynaecology, and Kids Line integration\n- Priority: P1\n- Status: open — requires scoping workshop"
+        }
+      ]
+    },
+    {
+      "title": "Feature Requirements",
+      "content": "",
+      "subsections": [
+        {
+          "title": "FRD-001: Structured Check-in Flow",
+          "content": "- User story: As a mother after the Wochenbett, I want regular structured check-ins so that emerging needs are identified early and I feel continuously supported.\n- Acceptance criteria:\n  - Onboarding captures birth date, postpartum stage, and initial topic areas\n  - Questionnaires cover wellbeing, physical recovery, sleep, mental health, social support\n  - Re-check-ins at configurable intervals\n- Dependencies: PRD-001\n- Evidence refs: `SRC-001`, `SRC-002`\n- Priority: P0\n- Status: concept"
+        },
+        {
+          "title": "FRD-002: Orientation and Triage (\"Was ist normal?\")",
+          "content": "- User story: As a mother experiencing postpartum symptoms, I want to understand whether my situation is normal and what action to take, so that I feel reassured or seek appropriate help.\n- Acceptance criteria:\n  - Symptom- and situation-based orientation content (curated, evidence-based)\n  - Clear action pathways: self-help, peer support, professional referral\n  - No medical diagnosis — escalation to Fachperson when indicated\n- Dependencies: PRD-001, FRD-001\n- Evidence refs: `SRC-001`, `SRC-002`\n- Priority: P0\n- Status: concept"
+        },
+        {
+          "title": "FRD-003: Matching and Referral",
+          "content": "- User story: As a mother needing specific support, I want to be matched to the right professional, service, or resource in my region, so that I get appropriate help without navigating the system alone.\n- Acceptance criteria:\n  - Matching by topic, region, format, cost, and availability\n  - Covers: Fachpersonen, telehealth, counselling, therapy, local support services\n  - Links to ecosystem database (FRD-005)\n- Dependencies: PRD-001, FRD-002\n- Evidence refs: `SRC-001`, `SRC-002`\n- Priority: P1\n- Status: concept"
+        },
+        {
+          "title": "FRD-004: Continuity and Follow-up",
+          "content": "- User story: As a mother in ongoing postpartum recovery, I want reminders, follow-ups, and a view of my progress, so that I feel accompanied over months rather than left alone after a single interaction.\n- Acceptance criteria:\n  - Reminder system for check-ins and follow-ups\n  - Personal timeline / progress view\n  - Optional case management (light or intensive)\n- Dependencies: PRD-001, FRD-001\n- Evidence refs: `SRC-001`, `SRC-002`\n- Priority: P1\n- Status: concept"
+        },
+        {
+          "title": "FRD-005: Ecosystem Database",
+          "content": "- User story: As the platform, I need a structured database of existing postpartum services in Switzerland, so that matching and referral are based on real, maintained data.\n- Acceptance criteria:\n  - Services captured with: region, topic, format, cost, availability, quality indicators\n  - Filterable and searchable\n  - Maintainable (update workflow defined)\n- Dependencies: PRD-001\n- Evidence refs: `SRC-001`, `SRC-002`\n- Priority: P1\n- Status: concept"
+        }
+      ]
+    },
+    {
+      "title": "Ideation",
+      "content": "",
+      "subsections": [
+        {
+          "title": "MVP Options (from source material)",
+          "content": "**Option A: Validierungs-MVP** (recommended starting point)\n- Landing page + value proposition\n- Simple structured check-in\n- Manual evaluation / concierge model\n- Curated resources\n- Simple matching with manual support\n- Pro: cheap, fast, strong learning curve / Con: not scalable\n\n**Option B: Service-MVP**\n- Check-in flow + triage logic\n- Appointment or contact brokering\n- Defined partner offerings\n- Manual or semi-manual case management\n- Pro: validates actual care logic / Con: operationally heavier\n\n**Option C: Produkt-MVP**\n- App / web app with personalized topic overview\n- AI-powered question logic\n- Matching / marketplace\n- Timeline and check-ins\n- Pro: strong vision, partner-ready / Con: only feasible as concept/prototype within CHF 10–20k\n\n**Recommendation:** Between Option A and B. A full marketplace + intelligent triage + case management is too broad for the first iteration."
+        },
+        {
+          "title": "Proposed Maji Deliverables (CHF 10–20k scope)",
+          "content": "1. Scoping workshop\n2. Knowledge consolidation\n3. Patient journey / service blueprint light\n4. Opportunity mapping\n5. MVP definition\n6. Concept visualization (clickable low/mid-fidelity prototype)\n7. Validation plan\n8. Partner-readiness package (for Medgate)"
+        },
+        {
+          "title": "Open Hypotheses",
+          "content": "1. Women want ongoing orientation and feedback, not just information.\n2. A structured check-in after week 6 addresses a real care gap.\n3. Low-threshold digital support increases early uptake of appropriate care.\n4. Trust is built through the combination of digital access and real professional connection.\n5. Curated matching into the existing Swiss landscape is more valuable than building everything in-house.\n6. A pilot works best via a clearly scoped use case, not a broad overall vision."
+        },
+        {
+          "title": "Scoping Questions Still Open",
+          "content": "- Care depth: what does the platform handle vs. refer?\n- Target segment at launch: all mothers? post-Wochenbett only? elevated need? German-speaking CH?\n- Role of AI: question structuring? content orientation? triage support? (no medical advice without Fachperson)\n- Role of professionals: directly bookable? referred? partner network? human case management?\n- Business model: B2C? B2B2C via insurers/telehealth/employers? Medgate pilot? licensing?\n- Success metrics: activation post-birth, recurring check-ins, successful referrals, uncertainty reduction, perceived accompaniment"
+        }
+      ]
+    },
+    {
+      "title": "Research Notes",
+      "content": "",
+      "subsections": [
+        {
+          "title": "Versorgungsluecke — Key Data Points",
+          "content": "- Organized care ends after ~56 days / 6–8 weeks (Wochenbett)\n- ~30% report medium- to long-term postpartum complaints\n- ~60% feel rather or very overwhelmed\n- ~30% have topics they couldn't discuss with anyone\n- ~1 in 3 feels psychologically undersupported\n- 94% want continued support after Wochenbett\n- ~46% want low-threshold counselling via phone or chat\n- International guidelines recommend structured follow-up to 1 year postpartum"
+        },
+        {
+          "title": "Topic Clusters Along the Patient Journey",
+          "content": "**Wochenbett (0–6/8 weeks):** emotional distress, breastfeeding/nutrition, sleep, uncertainty with baby, physical recovery, birth processing\n**Post-Wochenbett to 1 year:** sleep, work-life balance/return to work, mental health, social isolation, body changes, partnership/role changes"
+        },
+        {
+          "title": "Hebamme as Trust Anchor",
+          "content": "The midwife (Hebamme) is the strongest trusted contact in the early phase — described as reachable, individually attuned, human, experienced. But their mandate ends with the Wochenbett."
+        },
+        {
+          "title": "Co-Creation Workshop (2026-03-24)",
+          "content": "12 interdisciplinary professionals confirmed the gap. Represented: gynaecology, paediatrics, midwifery, psychotherapy, physiotherapy, nursing, parental counselling, insurance, occupational health management."
+        },
+        {
+          "title": "Medgate Strategic Assessment",
+          "content": "Medgate is not just a distribution partner but potentially: care partner, distribution partner, trust anchor, integration partner for medical services, pilot partner. Key question: what role does Medgate play in the target picture — medical escalation partner? co-branding? ecosystem matching? first pilot channel?"
+        },
+        {
+          "title": "Risks and Tensions",
+          "content": "**Product:** scope creep; too many topics at once; unclear boundary between information, triage, and medical service\n**Operational:** case management is valuable but expensive; partner coordination can be slow; local service data needs maintenance\n**Regulatory:** sensitive health data; medical responsibility with AI support; expectation management in crises\n**Market:** end-user willingness to pay unclear; B2B partner logic needs solid use case; marketplace effect needs critical mass"
+        }
+      ]
+    },
+    {
+      "title": "Notes & Decisions",
+      "content": "- 2026-04-21 | Created project page from consolidated knowledge file (postpartum_knowledge_file.md)\n- 2026-04-21 | Problem space strongly explored and qualitatively validated; product definition and MVP scope still in progress\n- 2026-04-21 | Medgate has expressed strategic interest — role definition needed before pilot\n- 2026-04-21 | Recommended engagement scope: strategy + scope + validation block (not full product build)",
+      "subsections": []
+    }
+  ]
+}
